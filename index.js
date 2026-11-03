@@ -9,3 +9,18 @@ app.use(
   }),
 );
 
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+db.sequelize
+  .sync()
+  .then((result) => {
+    app.listen(PORT, () => {
+      console.log(`Server started`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
