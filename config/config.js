@@ -1,6 +1,6 @@
-require
+require('dotenv').config();
 
-const production = {
+const development = {
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
@@ -9,7 +9,7 @@ const production = {
   dialect: process.env.DB_DIALECT
 };
 
-const development = {
+const production = {
   use_env_variable: 'POSTGRES_URL',
   dialect: 'postgres',
   dialectOptions: {
